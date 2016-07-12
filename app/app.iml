@@ -103,6 +103,10 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 23 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
+    <orderEntry type="library" exported="" name="hugo-annotations-1.2.1" level="project" />
+    <orderEntry type="library" exported="" name="okio-1.8.0" level="project" />
+=======
     <orderEntry type="library" exported="" name="converter-gson-2.0.2" level="project" />
     <orderEntry type="library" exported="" name="animated-vector-drawable-24.0.0" level="project" />
     <orderEntry type="library" exported="" name="cardview-v7-23.4.0" level="project" />
@@ -113,6 +117,7 @@
     <orderEntry type="library" exported="" name="rxandroid-1.2.1" level="project" />
     <orderEntry type="library" exported="" name="okio-1.8.0" level="project" />
     <orderEntry type="library" exported="" name="okhttp-3.3.1" level="project" />
+>>>>>>> upstream/master
     <orderEntry type="library" exported="" name="gson-2.6.2" level="project" />
     <orderEntry type="library" exported="" name="adapter-rxjava-2.1.0" level="project" />
     <orderEntry type="library" exported="" name="preference-v7-23.4.0" level="project" />
@@ -131,6 +136,16 @@
     <orderEntry type="library" exported="" name="library-1.1.6" level="project" />
     <orderEntry type="library" exported="" name="easyvideoplayer-0.2.9" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-24.0.0" level="project" />
+<<<<<<< HEAD
+    <orderEntry type="library" exported="" name="support-annotations-24.0.0" level="project" />
+    <orderEntry type="library" exported="" name="converter-gson-2.0.2" level="project" />
+    <orderEntry type="library" exported="" name="support-vector-drawable-24.0.0" level="project" />
+    <orderEntry type="library" exported="" name="rxandroid-1.2.1" level="project" />
+    <orderEntry type="library" exported="" name="cardview-v7-23.4.0" level="project" />
+    <orderEntry type="library" exported="" name="dot-progress-bar-0.1.4" level="project" />
+    <orderEntry type="library" exported="" name="circleimageview-2.0.0" level="project" />
+=======
+>>>>>>> upstream/master
     <orderEntry type="library" exported="" name="utils-v4-1.6.1" level="project" />
   </component>
 </module>
