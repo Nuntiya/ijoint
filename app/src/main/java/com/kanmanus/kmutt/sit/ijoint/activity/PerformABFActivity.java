@@ -10,6 +10,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -73,7 +74,8 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
     public static final int COUNT19 = R.raw.count_019;
     public static final int COUNT20 = R.raw.count_020;
 
-    private String tid, side, targetAngle, numberOfRound, calibratedAngle;
+    private String tid, side, targetAngle, numberOfRound;
+    private double calibratedAngle;
 
     private boolean isRecording = false;
     private long begin;
@@ -111,7 +113,7 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
         targetTmp = Double.parseDouble(targetAngle);
         tmp = targetTmp;
         numberOfRound = intent.getStringExtra("number_of_round");
-        calibratedAngle = intent.getStringExtra("calibrated_angle");
+        calibratedAngle = intent.getDoubleExtra("calibrated_angle",0);
         exercise_type = intent.getStringExtra("exercise_type");
         azimuthAngle = intent.getStringExtra("azimuthAngle");
         isABF = intent.getStringExtra("isABF");
@@ -123,6 +125,7 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
         if(isABF.equals(YES)){
             title = "Perform ABF Task";
         }
+        Log.d("ABF","calibratedAngle = "+calibratedAngle);
         tvHeadLine.setText(title);
 
         tvSide = (TextView) findViewById(R.id.side_value);
@@ -280,7 +283,7 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
             }
             increaseTarget(180);
         }
-        if (state.equals(EXERCISE_SUCCESS) && angle < 5) {
+        if (state.equals(EXERCISE_SUCCESS) && angle <= calibratedAngle) {
             score++;
             tvNumberOfRound.setText(score + "/" + numberOfRound);
             if(isABF.equals(YES)){
@@ -330,7 +333,7 @@ public class PerformABFActivity extends Activity implements Orientation.Listener
             }
             decreaseTarget(-45);
         }
-        if (state.equals(EXERCISE_SUCCESS) && angle > -5) {
+        if (state.equals(EXERCISE_SUCCESS) && angle > (calibratedAngle*-1)) {
             score++;
             tvNumberOfRound.setText(score + "/" + numberOfRound);
             if(isABF.equals(YES)){

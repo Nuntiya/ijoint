@@ -45,7 +45,8 @@ public class CalibrationActivity extends BaseActivity implements Orientation.Lis
 
     private DecimalFormat df;
 
-    private String tid, date, side, targetAngle, numberOfRound, calibratedAngle, isABF;
+    private String tid, date, side, targetAngle, numberOfRound, isABF;
+    private double calibratedAngle;
 
     private static SoundPool soundPool;
     private static HashMap<Integer, Integer> soundPoolMap;
@@ -199,7 +200,8 @@ public class CalibrationActivity extends BaseActivity implements Orientation.Lis
                             sum += Double.parseDouble(item.angle);
                             sum_calibate += Double.parseDouble(item.getCalibate());
                         }
-                        calibratedAngle = "" + (sum/resultItems.size());
+                        //calibratedAngle = "" + (sum/resultItems.size());
+                        calibratedAngle = sum_calibate/resultItems.size();
                         Toast.makeText(getApplicationContext(), "The calibrated angle is " + df.format(sum_calibate/resultItems.size()), Toast.LENGTH_SHORT).show();
                     }
                     else {

@@ -33,7 +33,9 @@ public class SignInActivity extends BaseActivity {
         userDataManager = new UserDataManager();
         userNameEditText = (EditText) findViewById(R.id.et_username);
         passwordEditText = (EditText) findViewById(R.id.et_password);
+
     }
+
 
     public void signIn(View v){
         String userName = userNameEditText.getText().toString().trim();

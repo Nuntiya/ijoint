@@ -31,6 +31,7 @@ public class ExerciseSampleVideoFragment extends BaseFragment implements Exercis
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
+
     private ExerciseVideoDataManager videoDataManager;
     private AdapterMapping adapterMapping;
     private FlexibleAdapter<IFlexible> exerciseVideoAdapter;
